@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 import "./dropdown.scss";
 
 function Dropdown({ placeholder, options = [], selected, handleOnSelect }) {
@@ -36,5 +38,17 @@ function Dropdown({ placeholder, options = [], selected, handleOnSelect }) {
     </>
   );
 }
+
+// 8.Add all types/interfaces like if it will be Production code
+Dropdown.propTypes = {
+  placeholder: PropTypes.string,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      value: PropTypes.string
+    })
+  ),
+  selected: PropTypes.object
+};
 
 export default Dropdown;

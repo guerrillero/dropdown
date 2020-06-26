@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./styles.css";
 import Dropdown from "./Dropdown/Dropdown";
 
-export default function App() {
+const App = () => {
   const items = [
-    { id: "1", value: "val 1" },
-    { id: "2", value: "val 2" },
-    { id: "3", value: "val 3" }
+    { id: 1, value: "val 1" },
+    { id: 2, value: "val 2" },
+    { id: 3, value: "val 3" }
   ];
 
-  // Control initially selected option from parent
-  const [optSelected, setOptSelected] = useState({});
+  // 3. Control initially selected option from parent
+  const [optSelected, setOptSelected] = useState({ id: "", value: "" });
 
   return (
     <div className="App">
@@ -20,7 +20,7 @@ export default function App() {
         <div>
           <Dropdown
             options={items}
-            placeholder="Select options"
+            placeholder="Select option"
             selected={optSelected}
             handleOnSelect={setOptSelected}
           />
@@ -38,4 +38,8 @@ export default function App() {
       </div>
     </div>
   );
-}
+};
+
+App.propTypes = {};
+
+export default App;
