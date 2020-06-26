@@ -9,7 +9,7 @@ function Dropdown({ placeholder, options = [], selected, handleOnSelect }) {
     <>
       <div className="dropdown">
         <button className="btn dropdown-btn" onClick={() => toggle()}>
-          {placeholder}
+          {selected.value || placeholder}
         </button>
         {open && (
           <ul className="dropdown-menu">
