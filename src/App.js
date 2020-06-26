@@ -8,11 +8,9 @@ export default function App() {
     { id: "2", value: "val 2" },
     { id: "3", value: "val 3" }
   ];
-  const [optSelected, setOptSelected] = useState({});
 
-  const handleOnSelect = event => {
-    setOptSelected(event);
-  };
+  // Control initially selected option from parent
+  const [optSelected, setOptSelected] = useState({});
 
   return (
     <div className="App">
@@ -24,13 +22,18 @@ export default function App() {
             options={items}
             placeholder="Select options"
             selected={optSelected}
-            handleOnSelect={handleOnSelect}
+            handleOnSelect={setOptSelected}
           />
         </div>
         <div>
           <h3>{`You selected: ${
             optSelected.value ? optSelected.value : "-"
           }`}</h3>
+        </div>
+        <div>
+          <button className="btn btn-default" onClick={setOptSelected}>
+            Clear
+          </button>
         </div>
       </div>
     </div>

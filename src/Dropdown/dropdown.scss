@@ -1,16 +1,13 @@
 .dropdown {
   position: relative;
   display: inline-block;
+
   &-btn {
     background-color: #4caf50;
     color: white;
-    font-size: 16px;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 2px;
   }
   &-menu{
-    display: none;
+    display: block;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
@@ -21,16 +18,24 @@
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    line-height: 1.5rem;
+    
     &:hover{
       background-color: #dddddd;
     }
   }
-  &:hover &-menu{
-    display: block;
-  }
+
   &:hover &-btn{
     background-color: #3e8e41;
   }
+}
+.selected{
+  background-color: #3e8e41;
+}
+.dot{
+  font-size: 3rem;
 }
 
